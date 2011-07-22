@@ -1,0 +1,3 @@
+http://localhost:7979/Clustal
+http://localhost:8080/ws/Clustal
+http://localhost:7979/Muscle

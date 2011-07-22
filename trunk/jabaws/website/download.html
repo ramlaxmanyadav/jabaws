@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "XHTML 1.0 Strict"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content=
+"text/html; charset=iso-8859-1" />
+<meta name="Last-modified" content="Mon, 7 Apr 2011 18:00:00 GMT"/>
+<title>Java Bioinformatics Analysis Web Services (JABAWS) download
+page</title>
+<link href="ws.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="prototype-1.6.0.3.js">
+        
+</script>
+</head>
+<body>
+<div id="page">
+<div id="banner">
+<table> 
+<tr><td style="width:158px;"><a href="http://www.dundee.ac.uk"><img src="images/uod_lt_long.gif"  alt="University of Dundee" width="158" height="90" class="logo"  title="University of Dundee" longdesc="http://www.dundee.ac.uk"/></a></td>
+<td class="bg"><img src="images/jabaws2.png" alt="JABAWS-2.0:Disorder" width="353" height="67" title="JABAWS-2.0:Disorder"/></td>
+<td class="bg"><img src="images/banner_right.png" alt="Disorder" width="200" height="80"/></td>
+</tr>
+</table>
+</div>
+
+<!-- banner end-->
+<div id="wrapper">
+<div id="panel"><a href="index.html">Home</a> 
+<a href="quick_start.html">Getting Started</a> 
+<a href="man_about.html">Manual</a> 
+<a class="selected" href="download.html">Download</a> 
+<a href="contacts.html">Contact Us</a>
+<a href="PublicAnnualStat" title="JABAWS usage statistics">Usage Statistics</a>
+<a href="http://www.compbio.dundee.ac.uk" title="University of Dundee, The Barton Group" >Barton Group</a>
+</div>
+
+<!-- panel end-->
+<div id="content">
+  <h2 id="headtitle" style="text-align:left">JABAWS Server Virtual Machine</h2>
+  <p><span style="text-align:left">JABAWS virtual machine is a way of running fully functional JABA Web Services on your own computer. To use virtual machine (VM) you have to install a software for running it. We would recommend <a href="http://www.vmware.com/products/player">VMWare Player</a> for Windows and Linux users. There is also an  <a href="http://www.virtualbox.org/wiki/Download_Old_Builds_3_2">Oracle VirtualBox</a> (version 3.2.12) for Mac users. Both are free and installation is simple.  <a href="http://www.jalview.org/download.html">Jalview</a></span> can <a href="man_servervm.html#jalviewWithJaba">use your local JABAWS VM</a>. </p>
+  <ul>
+    <li> JABAWS Virtual Appliance: <a href="http://www.compbio.dundee.ac.uk/jabaws/archive/jabaws-vm.zip">download</a> (520M)</li>
+    </ul>
+  <p>Please check out our <a href="man_servervm.html#whenvm">manual</a> for the detailed instructions. </p>
+
+
+<h2><a name="jabawswar" id="jabawswar"></a>JABAWS Server Web Application </h2>
+<p> The JABAWS Server Web Application aRchive (WAR) version is for you if you want to deploy JABAWS for many users e.g. your laboratory or if you are an expert user and want to have more control on JABAWS. Typically, you will have a cluster or at least a powerful server machine which all users are willing to use. If you only have a single server then, you may use JABAWS Server Virtual Appliance instead. The server is provided as a self-contained <a href="http://en.wikipedia.org/wiki/WAR_(Sun_file_format)">Web Application
+aRchive (WAR) </a> containing all necessary binaries. WAR file can be deployed on any
+ web application server
+<!-- Note - mention servlet 2.4 compliance here? -->supporting at least version 2.4 of the Java servlet specification, i.e. <a href="http://tomcat.apache.org/download-60.cgi">Tomcat 7.0</a>. </p>
+
+<ul>
+<li>A Complete Server for all platforms: <a href=
+"http://www.compbio.dundee.ac.uk/jabaws/archive/jaba.war">download</a>
+(51M)</li>
+</ul>
+
+
+<p>Please bear in mind that if you deploy JABAWS WAR on Windows, only the Muscle and Clustal web services will work! If you want to run the other web services on Windows, then use the JABAWS Server VM package instead.  
+  <!-- content end-->
+</p>
+
+<h2> <a name="minclient" id="minclient"></a>JABAWS Command Line Client </h2>
+<p>The command line client is an executable Java program for scripting against JABA web services.  Its also useful as an example of how to access JABAWS services if you intend to use JABAWS in your own program, with functions demonstrating how to discover command line parameters and presets supported by a service, and how to run, monitor and retrieve the results of a job. <em>Note: The client is used in the <a href="http://www.jalview.org/source/jalview_2_6_1.tar.gz">Jalview 2.6.1 source code</a> to autogenerate a graphical user interface for JABA services.</em></p>
+<ul>
+  <li>Command line client
+    <ul>
+        <li>binaries: <a href=
+"http://www.compbio.dundee.ac.uk/jabaws/archive/min-jaba-client-2.0.jar">download</a> (80 K)</li>
+      <li>source: <a href=
+"http://www.compbio.dundee.ac.uk/jabaws/archive/jaba-client-source-2.0.jar">download</a> (70 K)</li>
+    </ul>
+  </li>
+</ul>
+<p>The command line client will display help documentation if it is run with no arguments, the same information is also given in <a href="man_client.html#usingcclient">the command line client's manual page</a>. </p>
+<h2>Version </h2>
+<p>Current JABAWS version is 1.1 release date 7 April 2011. Please consult the <a href="change.log">change log</a> file for the breakdown of the changes. </p>
+<div class="source">
+<div class="header collapsed" onclick=
+"$(this).toggleClassName('collapsed'); $(this).next('.body').toggleClassName('collapsed');"
+ title="Click to open/close">The Source Code</div>
+
+<div class="body collapsed">
+<h2>The Complete Source Code</h2>
+<p>If you want to add another web service or modify JABAWS in any way just download a complete JABAWS source code. We offer the code under <a href=
+"http://www.apache.org/licenses/LICENSE-2.0.txt">Apache licence</a>.  The code archive contains the complete <a href=
+"http://www.eclipse.org">Eclipse</a> JABAWS project, but Eclipse is not
+  necessary to build it. Please examine the Ant build file (build.xml)
+  to build and test JABAWS from sources.</p>
+<ul>
+  <li>A complete Eclipse project package: <a href=
+"http://www.compbio.dundee.ac.uk/jabaws/archive/jaba-project.zip">download</a> (82M)</li>
+  <li>JABAWS source  only package: <a href=
+"archive/jabaws-src-2.0.jar">download</a> (250K)</li>
+  </ul>
+
+<!--body end -->
+</div>
+
+<!--source end -->
+</div>
+
+</div>
+<!-- wrapper end-->
+<div id="copyright">Last update: 7 April 2011<br />
+ Peter Troshin and Geoff Barton, The Barton Group, University of
+Dundee, UK</div>
+
+</div><!-- page end-->
+<!-- Google analitics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{
+var pageTracker = _gat._getTracker("UA-5356328-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+</div>
+</body>
+</html>
+
