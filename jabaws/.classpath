@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="datamodel"/>
+	<classpathentry kind="src" path="engine"/>
+	<classpathentry kind="src" path="runner"/>
+	<classpathentry kind="src" path="webservices"/>
+	<classpathentry excluding="testdata/" kind="src" path="testsrc"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="testsrc/lib/testng-5.10-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/drmaa.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/compbio-annotations-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/compbio-util-1.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/derby.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>
