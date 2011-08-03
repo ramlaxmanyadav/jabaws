@@ -3,8 +3,8 @@
  * 
  * @author Petr Troshin 
  * 
- *  	Date January 2010
+ *  	Date January 2010 
+ * 
  * 
  */
 package compbio.runner;
-
