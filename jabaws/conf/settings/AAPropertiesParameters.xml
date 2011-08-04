@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<runnerConfig>
+	<runnerClassName>compbio.runner.sequence.AAProperties</runnerClassName>
+	<prmSeparator> </prmSeparator>
+	<parameters>
+		<name>Input FASTA</name>
+		<description>Location of input FASTA file</description>
+		<optionNames>-i</optionNames>
+		<validValue>
+			<type>String</type>
+		</validValue>
+	</parameters>
+	<parameters>
+		<name>Output location</name>
+		<description>Location of output file, defaults to standard IO</description>
+		<optionNames>-o</optionNames>
+		<validValue>
+        	<type>String</type>
+        </validValue>
+	</parameters>
+	<parameters>
+		<name>Output format</name>
+		<description>Output format, defaults to csv</description>
+		<optionNames>-f</optionNames>
+		<defaultValue>csv</defaultValue>
+		<possibleValues>csv</possibleValues>
+        <possibleValues>tsv</possibleValues>
+	</parameters>
+	<parameters>
+		<name>Amino Acid composition XML file</name>
+		<description>Location of Amino Acid Composition XML file for defining amino acid composition</description>
+		<optionNames>-x</optionNames>
+		<validValue>
+        	<type>String</type>
+        </validValue>
+	</parameters>
+	<parameters>
+		<name>Element Mass XML</name>
+		<description>Location of Element Mass XML file for defining mass of elements</description>
+		<optionNames>-y</optionNames>
+		<validValue>
+			<type>String</type>
+		</validValue>
+	</parameters>
+	<parameters>
+		<name>Number of decimals</name>
+		<description>Number of decimals for property value, defaults to 4</description>
+		<optionNames>-d</optionNames>
+		<defaultValue>4</defaultValue>
+		<validValue>
+			<type>Integer</type>
+		</validValue>
+	</parameters>
+	<parameters>
+		<name>Compute all</name>
+		<description>Compute properties of option 1-9</description>
+		<optionNames>-a</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute molecular weight</name>
+		<description>Compute molecular weight</description>
+		<optionNames>-1</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute absorbance</name>
+		<description>Compute absorbance</description>
+		<optionNames>-2</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute extinction coefficient</name>
+		<description>Compute extinction coefficient</description>
+		<optionNames>-3</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute instability index</name>
+		<description>Compute instability index</description>
+		<optionNames>-4</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute apliphatic index</name>
+		<description>Compute apliphatic index</description>
+		<optionNames>-5</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute average hydropathy value</name>
+		<description>Compute average hydropathy value</description>
+		<optionNames>-6</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute isoelectric point</name>
+		<description>Compute isoelectric point</description>
+		<optionNames>-7</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute net charge at pH 7</name>
+		<description>Compute net charge at pH 7</description>
+		<optionNames>-8</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute composition of 20 standard amino acid</name>
+		<description>Compute composition of 20 standard amino acid (A, R, N, D, C, E, Q, G, H, I, L, K, M, F, P, S, T, W, Y, V)</description>
+		<optionNames>-9</optionNames>
+	</parameters>
+	<parameters>
+		<name>Compute composition of specific amino acid symbol</name>
+		<description>Compute composition of specific amino acid symbol</description>
+		<optionNames>-0</optionNames>
+		<validValue>
+			<type>String</type>
+		</validValue>
+	</parameters>
+</runnerConfig>
