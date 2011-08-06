@@ -19,10 +19,12 @@ import static org.testng.AssertJUnit.assertNotNull;
 import static org.testng.AssertJUnit.assertTrue;
 import static org.testng.AssertJUnit.fail;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -368,6 +370,21 @@ public class SequenceUtilTester {
 			assertEquals(result.size(), 1);
 			assertEquals(result.iterator().next().getScores().size(), 568);
 		} catch (IOException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testParseAAProp(){
+		try{
+			BufferedReader inStream = new BufferedReader(new FileReader(AllTestSuit.TEST_DATA_PATH + "aaprop.out"));
+			Map<String, List<Double>> name2Value = SequenceUtil.parseAAProp(inStream);
+			inStream.close();
+			for(String s:name2Value.keySet()){
+				System.out.println(s + " => " + name2Value.get(s));
+			}
+		}catch(IOException e){
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
