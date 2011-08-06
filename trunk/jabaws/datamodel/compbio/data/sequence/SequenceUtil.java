@@ -14,11 +14,14 @@
 
 package compbio.data.sequence;
 
+import static org.testng.AssertJUnit.fail;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -36,6 +39,7 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import compbio.metadata.AllTestSuit;
 import compbio.util.Util;
 
 /**
@@ -786,6 +790,44 @@ public final class SequenceUtil {
 		return fastaSeqs;
 	}
 
+	
+	public static Map<String, List<Double>> parseAAProp(BufferedReader input) throws IOException{
+		return parseAAProp(input, ",");
+	}
+	
+	public static Map<String, List<Double>> parseAAProp(BufferedReader input, String delimiter) throws IOException{
+		String line = input.readLine();
+		String[] headerArray = line.split(delimiter);
+		List<List<Double>> dListList = new ArrayList<List<Double>>();
+		for(int i = 0; i < headerArray.length; i++){
+			dListList.add(new ArrayList<Double>());
+		}
+		while((line = input.readLine()) != null){
+			String[] array = line.split(delimiter);
+			for(int i = 0; i < array.length; i++){
+				dListList.get(i).add(Double.parseDouble(array[i]));
+			}
+		}
+		Map<String, List<Double>> name2ValueList = new HashMap<String, List<Double>>();
+		for(int i = 0; i < headerArray.length; i++){
+			name2ValueList.put(headerArray[i], dListList.get(i));
+		}
+		return name2ValueList;
+	}
+	
+//	public static void main(String[] args){
+//		try{
+//			BufferedReader inStream = new BufferedReader(new FileReader(AllTestSuit.TEST_DATA_PATH + "aaprop.out"));
+//			Map<String, List<Double>> name2Value = SequenceUtil.parseAAProp(inStream);
+//			inStream.close();
+//			for(String s:name2Value.keySet()){
+//				System.out.println(s + " => " + name2Value.get(s));
+//			}
+//		}catch(IOException e){
+//			e.printStackTrace();
+//			fail(e.getMessage());
+//		}
+//	}
 }
 
 enum DisemblResult {

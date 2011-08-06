@@ -13,5 +13,6 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/compbio-annotations-1.0.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/compbio-util-1.4.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/derby.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>
