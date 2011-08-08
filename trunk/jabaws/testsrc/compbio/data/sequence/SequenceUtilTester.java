@@ -33,6 +33,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.testng.annotations.Test;
 
@@ -379,10 +380,14 @@ public class SequenceUtilTester {
 	public void testParseAAProp(){
 		try{
 			BufferedReader inStream = new BufferedReader(new FileReader(AllTestSuit.TEST_DATA_PATH + "aaprop.out"));
-			Map<String, List<Double>> name2Value = SequenceUtil.parseAAProp(inStream);
+			ScoreManager manager = SequenceUtil.parseAAProp(inStream);
 			inStream.close();
-			for(String s:name2Value.keySet()){
-				System.out.println(s + " => " + name2Value.get(s));
+			Map<String, TreeSet<Score>> id2Scores = manager.asMap();
+			for(String s:id2Scores.keySet()){
+				System.out.println("===========================SequenceID: " + s + "===========================");
+				for(Score score:id2Scores.get(s)){
+					System.out.println(score.getMethod() + " => " + score.getScores().get(0));
+				}
 			}
 		}catch(IOException e){
 			e.printStackTrace();
