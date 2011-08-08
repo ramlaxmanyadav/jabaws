@@ -791,37 +791,43 @@ public final class SequenceUtil {
 	}
 
 	
-	public static Map<String, List<Double>> parseAAProp(BufferedReader input) throws IOException{
+	public static ScoreManager parseAAProp(BufferedReader input) throws IOException{
 		return parseAAProp(input, ",");
 	}
 	
-	public static Map<String, List<Double>> parseAAProp(BufferedReader input, String delimiter) throws IOException{
+	public static ScoreManager parseAAProp(BufferedReader input, String delimiter) throws IOException{
 		String line = input.readLine();
 		String[] headerArray = line.split(delimiter);
 		List<List<Double>> dListList = new ArrayList<List<Double>>();
 		for(int i = 0; i < headerArray.length; i++){
 			dListList.add(new ArrayList<Double>());
 		}
+		
+		Map<String, Set<Score>> sequenceID2Scores = new HashMap<String, Set<Score>>();
+		int sequenceCount = 0;
 		while((line = input.readLine()) != null){
+			sequenceCount++;
+			Set<Score> scoreSet = new TreeSet<Score>();
 			String[] array = line.split(delimiter);
 			for(int i = 0; i < array.length; i++){
-				dListList.get(i).add(Double.parseDouble(array[i]));
+				scoreSet.add(new Score(headerArray[i], Float.parseFloat(array[i])));
 			}
+			sequenceID2Scores.put(sequenceCount + "", scoreSet);
 		}
-		Map<String, List<Double>> name2ValueList = new HashMap<String, List<Double>>();
-		for(int i = 0; i < headerArray.length; i++){
-			name2ValueList.put(headerArray[i], dListList.get(i));
-		}
-		return name2ValueList;
+		return ScoreManager.newInstance(sequenceID2Scores);
 	}
 	
 //	public static void main(String[] args){
 //		try{
 //			BufferedReader inStream = new BufferedReader(new FileReader(AllTestSuit.TEST_DATA_PATH + "aaprop.out"));
-//			Map<String, List<Double>> name2Value = SequenceUtil.parseAAProp(inStream);
+//			ScoreManager manager = SequenceUtil.parseAAProp(inStream);
 //			inStream.close();
-//			for(String s:name2Value.keySet()){
-//				System.out.println(s + " => " + name2Value.get(s));
+//			Map<String, TreeSet<Score>> id2Scores = manager.asMap();
+//			for(String s:id2Scores.keySet()){
+//				System.out.println("===========================SequenceID: " + s + "===========================");
+//				for(Score score:id2Scores.get(s)){
+//					System.out.println(score.getMethod() + " => " + score.getScores().get(0));
+//				}
 //			}
 //		}catch(IOException e){
 //			e.printStackTrace();

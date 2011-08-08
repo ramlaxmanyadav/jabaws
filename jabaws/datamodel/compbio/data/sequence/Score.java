@@ -40,6 +40,12 @@ public class Score implements Comparable<Score> {
 		// JaXB default constructor
 		method = "";
 	}
+	
+	public Score(String method, Float score){
+		this.method = method;
+		this.scores = new ArrayList<Float>();
+		this.scores.add(score);
+	}
 
 	/**
 	 * Instantiate the Score
