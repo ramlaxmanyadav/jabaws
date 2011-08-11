@@ -804,15 +804,14 @@ public final class SequenceUtil {
 		}
 		
 		Map<String, Set<Score>> sequenceID2Scores = new HashMap<String, Set<Score>>();
-		int sequenceCount = 0;
 		while((line = input.readLine()) != null){
-			sequenceCount++;
 			Set<Score> scoreSet = new TreeSet<Score>();
 			String[] array = line.split(delimiter);
-			for(int i = 0; i < array.length; i++){
+			String id = array[0];
+			for(int i = 1; i < array.length; i++){
 				scoreSet.add(new Score(headerArray[i], Float.parseFloat(array[i])));
 			}
-			sequenceID2Scores.put(sequenceCount + "", scoreSet);
+			sequenceID2Scores.put(id + "", scoreSet);
 		}
 		return ScoreManager.newInstance(sequenceID2Scores);
 	}
