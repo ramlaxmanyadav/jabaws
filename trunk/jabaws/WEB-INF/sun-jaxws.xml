@@ -32,6 +32,10 @@
         name='JronnWS'
         implementation='compbio.ws.server.JronnWS'
         url-pattern='/JronnWS'/>
+   	<endpoint
+        name='AAPropertiesWS'
+        implementation='compbio.ws.server.AAPropertiesWS'
+        url-pattern='/AAPropertiesWS'/>
     <endpoint
         name='DisemblWS'
         implementation='compbio.ws.server.DisemblWS'
