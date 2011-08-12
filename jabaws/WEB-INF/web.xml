@@ -111,6 +111,12 @@
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
+     <servlet>
+        <servlet-name>AAPropertiesWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
      <servlet>
         <servlet-name>DisemblWS</servlet-name>
@@ -194,6 +200,11 @@
     <servlet-mapping>
     	<servlet-name>JronnWS</servlet-name>
     	<url-pattern>/JronnWS</url-pattern>
+   </servlet-mapping>
+   
+   <servlet-mapping>
+    	<servlet-name>AAPropertiesWS</servlet-name>
+    	<url-pattern>/AAPropertiesWS</url-pattern>
    </servlet-mapping>
    
    <servlet-mapping>

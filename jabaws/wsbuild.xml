@@ -27,6 +27,7 @@
 	<property name="globplot.wsdl" location="${wsdl.dir}/GlobPlotWS.wsdl" />
 	<property name="iupred.wsdl" location="${wsdl.dir}/IUPredWS.wsdl" />
 	<property name="jronn.wsdl" location="${wsdl.dir}/JronnWS.wsdl" />
+	<property name="aaproperties.wsdl" location="${wsdl.dir}/AAPropertiesWS.wsdl" />
 	<property name="registry.wsdl" location="${wsdl.dir}/RegistryWS.wsdl" />
 	
 
@@ -141,6 +142,19 @@
 						<classpath refid="classes.path" />
 						<classpath refid="project.classpath" />
 		</wsgen>
+		
+		<wsgen sei="compbio.ws.server.AAPropertiesWS" 
+								sourcedestdir="${basedir}/webservices" 
+								destdir="${classes}" 
+								resourcedestdir="${wsdl.dir}" 
+								keep="true" genwsdl="true" 
+								extension="false" 
+								xendorsed="true"			
+								verbose="true">
+								<classpath refid="classes.path" />
+								<classpath refid="project.classpath" />
+				</wsgen>
+		
 		<wsgen sei="compbio.ws.server.IUPredWS" 
 								sourcedestdir="${basedir}/webservices" 
 								destdir="${classes}" 
